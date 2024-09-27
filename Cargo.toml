@@ -2,5 +2,36 @@
 name = "fromis"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+repository = "https://github.com/m1sk9/babyrite"
 
 [dependencies]
+anyhow = { version = "1.0.82" }
+dotenvy = { version = "0.15.7" }
+envy = { version = "0.4.2" }
+once_cell = { version = "1.19.0" }
+regex = { version = "1.10.4" }
+tracing = { version = "0.1.40" }
+typed-builder = { version = "0.20.0" }
+serde_yaml = { version = "0.9.33" }
+
+[dependencies.serenity]
+version = "0.12.1"
+features = ["client", "gateway", "model", "cache", "rustls_backend"]
+default-features = false
+
+[dependencies.serde]
+version = "1.0.200"
+features = ["derive"]
+
+[dependencies.tokio]
+version = "1.37.0"
+features = ["macros", "rt-multi-thread"]
+
+[dependencies.tracing-subscriber]
+version = "0.3.18"
+features = ["env-filter", "json"]
+
+[dependencies.moka]
+version = "0.12.7"
+features = ["future"]
