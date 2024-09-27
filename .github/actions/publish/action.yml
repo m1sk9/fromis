@@ -1,0 +1,41 @@
+name: Publish
+description: Publish the Docker package
+inputs:
+  major:
+    description: Major version number
+    required: true
+  minor:
+    description: Minor version number
+    required: true
+  patch:
+    description: Patch version number
+    required: true
+  sha:
+    description: Git SHA
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - uses: docker/setup-buildx-action@v3
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ github.token }}
+
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: |
+          ghcr.io/m1sk9/fromis:latest
+          ghcr.io/m1sk9/fromis:${{ inputs.sha }}
+          ghcr.io/m1sk9/fromis:v${{ inputs.major }}
+          ghcr.io/m1sk9/fromis:v${{ inputs.major }}.${{ inputs.minor }}
+          ghcr.io/m1sk9/fromis:v${{ inputs.major }}.${{ inputs.minor }}.${{ inputs.patch }}

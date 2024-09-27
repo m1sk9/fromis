@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    // Rust Language Server (rust-analyzer)
+    "rust-lang.rust-analyzer"
+  ]
+}
