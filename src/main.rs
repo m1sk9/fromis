@@ -23,9 +23,7 @@ async fn main() -> anyhow::Result<()> {
     tracing::subscriber::set_global_default(subscriber)
         .expect("Failed to set tracing_subscriber as global default.");
 
-    if let Err(why) = dotenvy::dotenv() {
-        Err(anyhow::anyhow!("Failed to load .env file: {}", why))?;
-    };
+    dotenvy::dotenv().ok();
 
     let envs = from_env();
     let intents = GatewayIntents::MESSAGE_CONTENT | GatewayIntents::GUILD_MESSAGES;
