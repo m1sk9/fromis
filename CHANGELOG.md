@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/m1sk9/fromis/compare/fromis-v0.2.0...fromis-v0.2.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* release v0.2.1 ([f9d8146](https://github.com/m1sk9/fromis/commit/f9d8146e7992bc58dcb1f9e2813c3613dae43f9d))
+
 ## [0.2.0](https://github.com/m1sk9/fromis/compare/fromis-v0.1.0...fromis-v0.2.0) (2024-09-30)
 
 
