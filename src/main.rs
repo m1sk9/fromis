@@ -1,4 +1,6 @@
+mod github;
 mod handler;
+mod preview;
 
 use serenity::prelude::GatewayIntents;
 use tracing_subscriber::{EnvFilter, FmtSubscriber};
@@ -26,7 +28,7 @@ async fn main() -> anyhow::Result<()> {
     };
 
     let envs = from_env();
-    let intents = GatewayIntents::MESSAGE_CONTENT | GatewayIntents::GUILD_MEMBERS;
+    let intents = GatewayIntents::MESSAGE_CONTENT | GatewayIntents::GUILD_MESSAGES;
     let mut client = serenity::Client::builder(&envs.discord_api_token, intents)
         .event_handler(handler::FromisHandler)
         .intents(intents)
