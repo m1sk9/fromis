@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/m1sk9/fromis/compare/fromis-v0.2.1...fromis-v0.2.2) (2024-09-30)
+
+
+### Bug Fixes
+
+* can't read .env ([#8](https://github.com/m1sk9/fromis/issues/8)) ([9582e8e](https://github.com/m1sk9/fromis/commit/9582e8e31231b4d10fb0036d0d46dfcacf29b18c))
+
 ## [0.2.1](https://github.com/m1sk9/fromis/compare/fromis-v0.2.0...fromis-v0.2.1) (2024-09-30)
 
 
